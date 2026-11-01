@@ -1,0 +1,24 @@
+LoginTest|PASSED|140
+CreateTaskTest|FAILED|890
+CommentTest|SKIPPED|0
+CreateTaskTest|PASSED|920
+SearchTest|FAILED|250
+ProfileTest|PASSED|0
+DeleteTest|FAILED|999999
+LoginTest|FAILED|300
+CreateTaskTest|UNKNOWN|100
+RegisterTest|PASED|150
+UpdateTest|PASSED|abc
+RemoveTest|FAILED|-50
+BrokenLine
+|PASSED|100
+EmptyStatus||100
+EmptyDuration|FAILED|
+TooManyFields|PASSED|100|200
+NoDuration|FAILED
+HugeDuration|PASSED|999999999999999999999999999999
+ZeroTest|PASSED|0
+NegativeTest|FAILED|-1
+WhitespaceTest| PASSED |100
+AnotherTest|SKIPPED|50
+SearchTest|PASSED|400
