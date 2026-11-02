@@ -8,7 +8,7 @@ enum Status { PASSED, FAILED }
 public class FlakyDetector {
     private static final String SEPARATOR = "\\|";
 
-    private String[] validateTestRun(String testRun) throws InvalidNumberFields, InvalidStatus {
+    private static String[] validateTestRun(String testRun) throws InvalidNumberFields, InvalidStatus {
         String[] testRunLineFields = testRun.split(SEPARATOR);
 
         if (testRunLineFields.length != 2 || testRunLineFields[0].isBlank() || testRunLineFields[1].isBlank()) {
@@ -24,7 +24,7 @@ public class FlakyDetector {
         return testRunLineFields;
     }
 
-    public Set<String> failed(List<String> run) throws InvalidNumberFields, InvalidStatus {
+    public static Set<String> failed(List<String> run) throws InvalidNumberFields, InvalidStatus {
         Set<String> failedRuns = new HashSet<>();
 
         for (String testRunLine : run) {
@@ -40,7 +40,7 @@ public class FlakyDetector {
         return failedRuns;
     }
 
-    public Set<String> passed(List<String> run) throws InvalidNumberFields, InvalidStatus {
+    public static Set<String> passed(List<String> run) throws InvalidNumberFields, InvalidStatus {
         Set<String> passedRuns = new HashSet<>();
 
         for (String testRunLine : run) {
@@ -60,7 +60,7 @@ public class FlakyDetector {
     // в первом прогоне и прошли во втором. Но я решил сразу учитывать и обратную ситуацию,
     // потому что, как я понял, если тест сначала прошёл, а потом упал — он тоже будет flaky.
     // Поэтому мне показалось удобнее сделать проверку сразу в обе стороны.
-    public List<String> flaky(List<String> run1, List<String> run2) throws InvalidNumberFields, InvalidStatus {
+    public static List<String> flaky(List<String> run1, List<String> run2) throws InvalidNumberFields, InvalidStatus {
         Set<String> run1Failed = failed(run1);
         Set<String> run2Failed = failed(run2);
 
@@ -74,7 +74,7 @@ public class FlakyDetector {
         return new ArrayList<>(run1Failed);
     }
 
-    public Map<String, Long> statusSummary(List<String> run) throws InvalidNumberFields, InvalidStatus {
+    public static Map<String, Long> statusSummary(List<String> run) throws InvalidNumberFields, InvalidStatus {
         Map<String, Long> summary = new HashMap<>();
 
         for (String testRunLine : run) {
