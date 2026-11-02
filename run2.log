@@ -1,0 +1,12 @@
+LoginTest|PASSED
+CreateTaskTest|PASSED
+CommentTest|FAILED
+LogoutTest|FAILED
+ProfileTest|PASSED
+DeleteTest|FAILED
+SearchTest|PASSED
+PaymentTest|PASSED
+RegistrationTest|FAILED
+SettingsTest|FAILED
+DashboardTest|PASSED
+NotificationTest|PASSED
